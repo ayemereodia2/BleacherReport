@@ -46,8 +46,8 @@ func flickrSearch(with searchURL: URL, completion: @escaping ([FlickrPhoto]?, Er
     
     // Check Network Status
     guard (Reachability.currentReachabilityStatus != .notReachable) else {
-        
-        return completion([],(FlickrAPI.noInternetConnection as! Error))
+        print(FlickrAPI.noInternetConnection)
+        return //completion([],(FlickrAPI.noInternetConnection as! Error))
     }
     
     // Make session and perform the request

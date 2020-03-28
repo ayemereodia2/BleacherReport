@@ -134,7 +134,9 @@ class PhotoSearchController: UIViewController {
         
        if let searchHistoryView = searchHistoryViewController?.view {
 
-
+//        view.setNeedsLayout()
+//        view.setNeedsUpdateConstraints()
+//        view.setNeedsDisplay()
         view.addSubview(searchHistoryView)
     }
         

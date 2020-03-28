@@ -142,7 +142,6 @@
 		047C6F6B242E292B00BAC7BA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				047C6F7A242E590300BAC7BA /* UIKit+MyFlickrPhotos.swift */,
 				047C6F6E242E2F3100BAC7BA /* API */,
 				04516F13242EAC9C00B48A49 /* SearchHistoryManager.swift */,
 				04516F15242F483400B48A49 /* Reachability.swift */,
@@ -187,6 +186,7 @@
 		047C6F77242E580900BAC7BA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				047C6F7A242E590300BAC7BA /* UIKit+MyFlickrPhotos.swift */,
 				047C6F78242E582100BAC7BA /* FlickrConfig.swift */,
 			);
 			path = Shared;
