@@ -11,24 +11,30 @@ import XCTest
 
 class BleacherReportAppTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+   //var sut = ServiceAPI
+    
+    var output: [FlickrPhoto] = []
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+   func test_Get_25_Item_In_Table(){
+    
+    guard let searchUrl = FlickrAPI.shared.searchUrl(with: "goose") else { return }
+    
+           
+    FlickrAPI.shared.flickrSearch(with: searchUrl) { [weak self] (photos, err) in
+               if let err = err {
+                   print("Failed to fetch flickr data: \(err.localizedDescription)")
+                   return
+               }
+               guard
+                   let self = self,
+                   let photos = photos else { return }
+        
+        self.output = photos
     }
+       
+    
+    XCTAssertEqual(self.output.count,25)
+   }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
