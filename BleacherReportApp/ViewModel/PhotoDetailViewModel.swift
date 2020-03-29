@@ -8,7 +8,11 @@
 
 import Foundation
 
-class PhotoDetailViewModel {
+protocol ProPhotoDetailViewModel {
+    var imageUrl: String { get }
+}
+
+class PhotoDetailViewModel:NSObject,ProPhotoDetailViewModel {
     
     private let photo: FlickrPhoto
     

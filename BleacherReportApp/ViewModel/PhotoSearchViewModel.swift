@@ -8,8 +8,14 @@
 
 import Foundation
 
+protocol ProPhotoSearchViewModel {
+    func photo(for indexPath: IndexPath) -> FlickrPhoto
+    func numberOfItems() -> Int
+    func imageUrl(for indexPath: IndexPath) -> String
+    func imageTitle(for indexPath: IndexPath) -> String
+}
 
-class PhotoSearchViewModel {
+class PhotoSearchViewModel:NSObject,ProPhotoSearchViewModel {
     // MARK:- Properties
     private let photos: [FlickrPhoto]
     

@@ -11,7 +11,7 @@ import UIKit
 class PhotoDetailController: UIViewController {
     
     // MARK:- Properties
-    var viewModel: PhotoDetailViewModel?
+    var viewModel: ProPhotoDetailViewModel?
     
     // MARK:- Screen Properties
     private lazy var scrollView: UIScrollView = {

@@ -11,7 +11,7 @@ import UIKit
 class PhotoSearchController: UIViewController {
     
     // MARK:- Properties
-    private var viewModel: PhotoSearchViewModel!// = PhotoSearchViewModel()
+    private var viewModel: ProPhotoSearchViewModel!// = PhotoSearchViewModel()
     fileprivate var searchHistoryViewController: SearchHistoryController?
     fileprivate var currentPage: Int = 0
     fileprivate var searchText: String?
