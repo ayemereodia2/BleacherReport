@@ -17,8 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
+        let viewModel = PhotoSearchViewModel()
+        
         if let window = window {
-            let photoSearchController = PhotoSearchController()
+            //DI
+            let photoSearchController = PhotoSearchController.create(with: viewModel)
             window.rootViewController = UINavigationController(rootViewController: photoSearchController)
             window.makeKeyAndVisible()
         }

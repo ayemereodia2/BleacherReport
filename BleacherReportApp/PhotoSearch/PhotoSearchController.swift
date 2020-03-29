@@ -11,7 +11,7 @@ import UIKit
 class PhotoSearchController: UIViewController {
     
     // MARK:- Properties
-    private lazy var viewModel: PhotoSearchViewModel = PhotoSearchViewModel()
+    private var viewModel: PhotoSearchViewModel!// = PhotoSearchViewModel()
     fileprivate var searchHistoryViewController: SearchHistoryController?
     fileprivate var currentPage: Int = 0
     fileprivate var searchText: String?
@@ -31,7 +31,7 @@ class PhotoSearchController: UIViewController {
         return sb
     }()
     
-    private lazy var collectionView: UICollectionView = {
+     public lazy var thecollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .black
@@ -63,7 +63,7 @@ class PhotoSearchController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView.collectionViewLayout.invalidateLayout()
+        thecollectionView.collectionViewLayout.invalidateLayout()
     }
     
     // MARK:- Screen layout methods
@@ -72,7 +72,7 @@ class PhotoSearchController: UIViewController {
         let newView = UIView()
         newView.backgroundColor = UIColor.red
         
-        [photoSearchBar, collectionView].forEach {
+        [photoSearchBar, thecollectionView].forEach {
             view.addSubview($0)
         }
         
@@ -83,14 +83,14 @@ class PhotoSearchController: UIViewController {
                               bottom: nil,
                               trailing: guide.trailingAnchor)
        
-        collectionView.anchor(top: photoSearchBar.bottomAnchor,
+        thecollectionView.anchor(top: photoSearchBar.bottomAnchor,
                               leading: guide.leadingAnchor,
                               bottom: guide.bottomAnchor,
                               trailing: guide.trailingAnchor)
     }
     
     // MARK:- Handling methods
-    private func searchFlickr(with query: String) {
+    public func searchFlickr(with query: String) {
         let query = query.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "+")
         
         if query.isEmpty {
@@ -114,10 +114,10 @@ class PhotoSearchController: UIViewController {
             self.viewModel = PhotoSearchViewModel(photos: photos)
             
             DispatchQueue.main.async {
-                self.collectionView.reloadSections(IndexSet(0...0))
+                self.thecollectionView.reloadSections(IndexSet(0...0))
                 if !photos.isEmpty {
                     let indexPath: IndexPath = IndexPath(item: 0, section: 0)
-                    self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
+                    self.thecollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
                 }
             }
         }
@@ -162,10 +162,10 @@ class PhotoSearchController: UIViewController {
         self.viewModel = PhotoSearchViewModel(photos: photos)
         
         DispatchQueue.main.async {
-            self.collectionView.reloadSections(IndexSet(0...0))
+            self.thecollectionView.reloadSections(IndexSet(0...0))
             if !photos.isEmpty {
                 let indexPath: IndexPath = IndexPath(item: 0, section: 0)
-                self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
+                self.thecollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
             }
         }
     
@@ -205,6 +205,12 @@ extension PhotoSearchController: UICollectionViewDataSource, UICollectionViewDel
         let photo = viewModel.photo(for: indexPath)
         photoDetailController.viewModel = PhotoDetailViewModel(photo: photo)
         navigationController?.pushViewController(photoDetailController, animated: true)
+    }
+    
+    static func create(with viewModel: PhotoSearchViewModel) -> UIViewController {
+        let controller = PhotoSearchController()
+        controller.viewModel = viewModel
+        return controller
     }
 }
 

@@ -12,6 +12,7 @@
 		04516F12242EAC2B00B48A49 /* SearchHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04516F11242EAC2B00B48A49 /* SearchHistoryController.swift */; };
 		04516F14242EAC9C00B48A49 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04516F13242EAC9C00B48A49 /* SearchHistoryManager.swift */; };
 		04516F16242F483400B48A49 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04516F15242F483400B48A49 /* Reachability.swift */; };
+		04516F182430B49300B48A49 /* PhotoListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04516F172430B49300B48A49 /* PhotoListTest.swift */; };
 		047C6F4A242E267A00BAC7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C6F49242E267A00BAC7BA /* AppDelegate.swift */; };
 		047C6F51242E267A00BAC7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047C6F4F242E267A00BAC7BA /* Main.storyboard */; };
 		047C6F53242E267C00BAC7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047C6F52242E267C00BAC7BA /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		04516F11242EAC2B00B48A49 /* SearchHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryController.swift; sourceTree = "<group>"; };
 		04516F13242EAC9C00B48A49 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
 		04516F15242F483400B48A49 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		04516F172430B49300B48A49 /* PhotoListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTest.swift; sourceTree = "<group>"; };
 		047C6F46242E267A00BAC7BA /* BleacherReportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BleacherReportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047C6F49242E267A00BAC7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047C6F50242E267A00BAC7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				047C6F60242E267C00BAC7BA /* BleacherReportAppTests.swift */,
 				047C6F62242E267C00BAC7BA /* Info.plist */,
+				04516F172430B49300B48A49 /* PhotoListTest.swift */,
 			);
 			path = BleacherReportAppTests;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04516F182430B49300B48A49 /* PhotoListTest.swift in Sources */,
 				047C6F61242E267C00BAC7BA /* BleacherReportAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
